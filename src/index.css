@@ -47,3 +47,23 @@ html[lang="te"] body {
 html[lang="te"] .font-display {
   letter-spacing: 0;
 }
+
+/* ── Google Translate: hide ALL of Google's own UI chrome ──
+   (the site's 🌐 button is the only language control visitors see) */
+body {
+  top: 0 !important; /* GT pushes body down for its banner — undo */
+}
+.goog-te-banner-frame.skiptranslate,
+.goog-te-gadget-icon,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-te-ftab {
+  display: none !important;
+}
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+#google_translate_element {
+  display: none;
+}

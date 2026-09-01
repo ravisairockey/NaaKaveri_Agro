@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="bg-deep text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1.5 text-[11px] font-semibold sm:text-xs">
           <p className="truncate">📍 {pick(STORE.addressShort, t("addressShortTe"))}</p>
-          <a href={`tel:${STORE.phoneTel}`} className="flex shrink-0 items-center gap-1.5 hover:text-warm-yellow">
+          <a href={`tel:${STORE.phoneTel}`} className="notranslate flex shrink-0 items-center gap-1.5 hover:text-warm-yellow">
             <Phone size={12} /> {STORE.phoneDisplay}
           </a>
         </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
               onClick={toggle}
               aria-label={lang === "en" ? "Switch to Telugu" : "Switch to English"}
               title={lang === "en" ? "తెలుగులో చూడండి" : "View in English"}
-              className="flex h-10 items-center gap-1.5 rounded-xl border-2 border-brand-yellow bg-white px-3 text-xs font-extrabold text-deep transition hover:bg-brand-yellow/15"
+              className="notranslate flex h-10 items-center gap-1.5 rounded-xl border-2 border-brand-yellow bg-white px-3 text-xs font-extrabold text-deep transition hover:bg-brand-yellow/15"
             >
               <Languages size={15} />
               {t("language")}
@@ -134,7 +134,7 @@ export default function Navbar() {
                 <button
                   onClick={toggle}
                   aria-label={lang === "en" ? "Switch to Telugu" : "Switch to English"}
-                  className="col-span-2 flex items-center justify-center gap-2 rounded-xl border-2 border-brand-yellow bg-white py-3 text-sm font-extrabold text-deep transition hover:bg-brand-yellow/15"
+                  className="notranslate col-span-2 flex items-center justify-center gap-2 rounded-xl border-2 border-brand-yellow bg-white py-3 text-sm font-extrabold text-deep transition hover:bg-brand-yellow/15"
                 >
                   <Languages size={16} />
                   {lang === "en" ? "🌐 తెలుగులో చూడండి" : "🌐 View in English"}

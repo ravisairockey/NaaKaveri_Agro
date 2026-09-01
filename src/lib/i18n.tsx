@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { translate, type DictKey, type Lang } from "./i18n-dict";
+import { googleTranslateTo, syncGoogleTranslate } from "./googleTranslate";
 
 // ─────────────────────────────────────────────────────────────
 // LANGUAGE PROVIDER — English / తెలుగు
@@ -46,6 +47,16 @@ export function LangProvider({ children }: { children: ReactNode }) {
       /* storage unavailable — choice just won't persist */
     }
     document.documentElement.lang = next;
+    // Full-page translation: sets Google's googtrans cookie and reloads
+    // once (no-op when already in sync). See lib/googleTranslate.ts.
+    googleTranslateTo(next);
+  }, []);
+
+  // On start: make Google's saved state match the visitor's saved choice,
+  // and load the Translate Element (auto-translates if Telugu was saved).
+  useEffect(() => {
+    syncGoogleTranslate(lang);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

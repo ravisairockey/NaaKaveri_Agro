@@ -58,7 +58,7 @@ export const DEFAULT_BUY_URL = "";
 
 ### 3. 🌐 Telugu / English button
 
-The site has a 🌐 **తెలుగు / English** toggle (top bar + mobile menu). The visitor's choice is remembered. To add or fix a translation, edit **`src/lib/i18n-dict.ts`** — every entry is a pair `[English, తెలుగు]`.
+The 🌐 toggle now translates the **whole page** (products, descriptions, articles — everything) using **Google Translate**. The visitor's choice is remembered. Your hand-written translations in **`src/lib/i18n-dict.ts`** (pairs `[English, తెలుగు]`) still take priority for the main menu and buttons; Google Translate covers everything else (machine quality).
 
 ### 4. 🖼️ Photos — the 3 folders
 
