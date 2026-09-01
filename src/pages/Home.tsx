@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   ArrowRight, MessageCircle, Phone, MapPin, Clock, ShieldCheck,
   Leaf, HeartHandshake, Store, BookOpen,
 } from "lucide-react";
 import Reveal from "../components/Reveal";
 import ProductCard from "../components/ProductCard";
+import HeroCarousel from "../components/HeroCarousel";
 import { categories, crops, problems, brands, products, articles } from "../data/catalog";
 import { STORE, waLink, directionsLink, asset } from "../config";
 import { useLang } from "../lib/i18n";
@@ -24,51 +24,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* ── HERO ── */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={asset("/images/hero.jpg")} alt="Green crop field at golden hour" className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/85 via-charcoal/60 to-charcoal/20" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:py-32 lg:py-40">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-2xl"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-widest text-charcoal">
-              🌱 {t("heroBadge")}
-            </span>
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {t("heroLine1")}
-              <br />
-              {t("heroLine2a")} <span className="text-warm-yellow">{t("heroLine2b")}</span>
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-              {t("heroSubPre")}
-              <strong className="text-white">{STORE.name}</strong>
-              {t("heroSubPost")}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold text-charcoal transition hover:bg-warm-yellow"
-              >
-                {t("exploreProducts")} <ArrowRight size={17} />
-              </Link>
-              <a
-                href={waLink(`Hello ${STORE.name}, I would like to know about your products.`)}
-                target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-3.5 text-sm font-extrabold text-white backdrop-blur transition hover:border-[#25D366] hover:bg-[#25D366]"
-              >
-                <MessageCircle size={17} /> {t("whatsappUs")}
-              </a>
-            </div>
-          </motion.div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-brand-yellow via-warm-yellow to-brand-yellow" />
-      </section>
+            {/* ── HERO (auto cross-fade carousel) ── */}
+      <HeroCarousel />
 
       {/* ── TRUST STRIP ── */}
       <section className="border-b border-charcoal/6 bg-white">
