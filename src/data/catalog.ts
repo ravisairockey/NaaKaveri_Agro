@@ -106,6 +106,7 @@ export const brands: Brand[] = [
   { slug: "coromandel", name: "Coromandel", blurb: "Plant nutrition & crop care." },
   { slug: "kaveri-seeds", name: "Kaveri Seeds", blurb: "High-performance Indian hybrids." },
   { slug: "nuziveedu", name: "Nuziveedu Seeds", blurb: "India's leading hybrid seed company." },
+  { slug: "siri-seeds", name: "Siri Seeds", blurb: "Quality for prosperity — trusted for 25+ years." },
 ];
 
 // ── Products ────────────────────────────────────────────────
@@ -383,6 +384,15 @@ export const products: Product[] = [
     features: ["Natural nitrogen fixation", "Better nodulation & root health", "Eco-friendly bio input", "Low cost per acre"],
     usage: "Coat seed just before sowing as per pack directions; keep away from direct sunlight.",
     safety: LABEL_NOTE, image: IMG.treat, featured: false,
+  },
+  {
+    id: 23, slug: "siri-green-hybrid-ssg", name: "Siri-Green Hybrid SSG Fodder Jowar", brand: "siri-seeds",
+    category: "seeds", crops: ["maize"], problems: ["crop-growth"],
+    packSizes: ["1 kg", "5 kg"],
+    overview: "Excellent multi-cut fodder jowar with high crude protein and lush green foliage — ideal green feed for dairy and livestock farmers.",
+    features: ["High crude protein green fodder", "Multi-cut with quick regrowth", "Sweet, palatable stems cattle love", "Siri Seeds — 25+ years of trust"],
+    usage: "Sow 8–10 kg per acre in rows; first cut at 50–55 days, then every 25–30 days as per the packet label.",
+    safety: LABEL_NOTE, image: asset("/images/products/Siri-Green_Packshot.jpg"), featured: true,
   },
 ];
 

@@ -56,21 +56,6 @@ const SLIDES = [
     altEn: "Farmers working in a green field",
     altTe: "పొలంలో పనిచేస్తున్న రైతులు",
   },
-  {
-    image: "/images/hero/Siri-Green_Packshot.jpg",
-    badgeEn: "Siri-Green Hybrid SSG — In Stock",
-    badgeTe: "సిరి-గ్రీన్ హైబ్రిడ్ SSG — స్టాక్‌లో ఉంది",
-    line1En: "SIRI-GREEN",
-    line1Te: "సిరి-గ్రీన్",
-    line2En: "FODDER",
-    line2Te: "పశుగ్రాసం",
-    accentEn: "JOWAR.",
-    accentTe: "జోన్నా.",
-    subEn: "Excellent fodder jowar with high crude protein — a Siri Seeds hybrid trusted for 25+ years. Ask us for sowing and dosage advice.",
-    subTe: "అధిక ప్రొటీన్ ఉన్న అద్భుతమైన పశుగ్రాసం జోన్నా హైబ్రిడ్ — 25 ఏళ్ల నమ్మకం, సిరి సీడ్స్. విత్తు సలహా కోసం మమ్మల్ని అడగండి.",
-    altEn: "Siri-Green Hybrid SSG fodder jowar seed pack",
-    altTe: "సిరి-గ్రీన్ హైబ్రిడ్ SSG విత్తన ప్యాక్",
-  },
 ];
 
 const SLIDE_MS = 6000;
