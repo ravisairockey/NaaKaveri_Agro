@@ -3,6 +3,14 @@
 // Change phone / WhatsApp / address here — it updates everywhere.
 // ─────────────────────────────────────────────────────────────
 
+// ── BUY LINK (placeholder) ───────────────────────────────────
+// Paste ANY website link between the quotes ("" → empty = OFF).
+//   • Set it here      → EVERY product gets a 🛒 "Buy Online" button
+//   • Leave ""         → no buy button anywhere (site looks as today)
+//   • One product only → set buyUrl on that product in catalog.ts
+// Example: export const DEFAULT_BUY_URL = "https://your-shop.com/buy";
+export const DEFAULT_BUY_URL = "";
+
 export const STORE = {
   name: "Sri Narayana Seeds & Pesticides",
   shortName: "Sri Narayana",

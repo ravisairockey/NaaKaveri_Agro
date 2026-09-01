@@ -2,12 +2,12 @@ import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   MessageCircle, Phone, ChevronRight, CheckCircle2, ShieldAlert,
-  BookOpenText, Package,
+  BookOpenText, Package, ShoppingCart,
 } from "lucide-react";
 import ProductCard from "../components/ProductCard";
 import Reveal from "../components/Reveal";
 import {
-  products, brandName, categoryName, cropName, cropEmoji, problemName,
+  products, brandName, categoryName, cropName, cropEmoji, problemName, productBuyUrl,
 } from "../data/catalog";
 import { STORE, productEnquiryLink } from "../config";
 import NotFound from "./NotFound";
@@ -16,6 +16,9 @@ export default function ProductDetail() {
   const { slug } = useParams();
   const product = products.find((p) => p.slug === slug);
   if (!product) return <NotFound />;
+
+  // Buy link for this product ("" = hide buy button; name is not clickable).
+  const buyUrl = productBuyUrl(product);
 
   const related = products
     .filter(
@@ -69,9 +72,23 @@ export default function ProductDetail() {
           <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">
             {brandName(product.brand)} · {categoryName(product.category)}
           </p>
-          <h1 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-charcoal sm:text-4xl">
-            {product.name}
-          </h1>
+          {/* Product name — with a buy link set, clicking the name opens the
+              shop/buy page in a new tab. */}
+          {buyUrl ? (
+            <a
+              href={buyUrl}
+              target="_blank"
+              rel="noreferrer"
+              title={`Buy ${product.name}`}
+              className="mt-2 block w-fit font-display text-3xl font-extrabold tracking-tight text-charcoal underline-offset-4 hover:text-deep hover:underline sm:text-4xl"
+            >
+              {product.name}
+            </a>
+          ) : (
+            <h1 className="mt-2 font-display text-3xl font-extrabold tracking-tight text-charcoal sm:text-4xl">
+              {product.name}
+            </h1>
+          )}
           <p className="mt-4 text-sm leading-relaxed text-charcoal/70 sm:text-base">{product.overview}</p>
 
           {/* crops */}
@@ -122,6 +139,15 @@ export default function ProductDetail() {
 
           {/* CTAs */}
           <div className="mt-8 space-y-3">
+            {buyUrl && (
+              <a
+                href={buyUrl}
+                target="_blank" rel="noreferrer"
+                className="flex w-full items-center justify-center gap-2.5 rounded-2xl bg-brand-yellow py-4 font-display text-base font-extrabold text-charcoal transition hover:bg-warm-yellow"
+              >
+                <ShoppingCart size={20} /> Buy Online
+              </a>
+            )}
             <a
               href={productEnquiryLink(product.name)}
               target="_blank" rel="noreferrer"

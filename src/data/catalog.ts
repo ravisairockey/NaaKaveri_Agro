@@ -1,4 +1,4 @@
-import { asset } from "../config";
+import { asset, DEFAULT_BUY_URL } from "../config";
 
 // ─────────────────────────────────────────────────────────────
 // PRODUCT CATALOG — in a full deployment this data lives in
@@ -49,6 +49,7 @@ export interface Product {
   safety: string;
   image: string;
   featured: boolean;
+  buyUrl?: string; // ← optional: shop/buy link for THIS product only (overrides DEFAULT_BUY_URL). Leave out = use DEFAULT_BUY_URL.
 }
 
 export interface Article {
@@ -119,6 +120,51 @@ const IMG = {
 
 const LABEL_NOTE =
   "Always read and follow the manufacturer's label before use. Application rates, timing and crop-stage guidance must follow the printed label and local agricultural department recommendations. Our store team is happy to explain the label in Telugu.";
+
+// Where does the 🛒 "Buy Online" button / product-name click go?
+//   product.buyUrl  →  if this product has its own link, use it;
+//   otherwise       →  DEFAULT_BUY_URL from src/config.ts ("" = buy button hidden).
+export function productBuyUrl(p: Product): string {
+  return p.buyUrl ?? DEFAULT_BUY_URL;
+}
+
+// ┌──────────────────────────────────────────────────────────────────────┐
+// │  HOW TO ADD A NEW PRODUCT (no coding knowledge needed)               │
+// │                                                                      │
+// │  1. Scroll to the LAST product in the list below.                    │
+// │  2. Copy ONE whole block — from  {  down to  },  (including both).   │
+// │  3. Paste it right after, then change the values:                    │
+// │                                                                      │
+// │    id:        any number not used yet (use the highest number + 1)   │
+// │    slug:      short english name, small letters, dashes not spaces   │
+// │    name:      the product name customers will see                    │
+// │    brand:     must match a brand slug above (e.g. "bayer")           │
+// │    category:  must match a category slug (e.g. "seeds")              │
+// │    crops:     which crops it suits — slugs like "paddy", "chilli"    │
+// │    packSizes: pack options shown on the card                         │
+// │    overview:  1–2 line description                                   │
+// │    features:  bullet points list (each in "quotes", comma between)   │
+// │    image:     IMG.seeds etc. (photo from public/images/products/)    │
+// │    buyUrl:    OPTIONAL — paste a link to buy THIS product.           │
+// │               Leave this line out to use DEFAULT_BUY_URL instead.    │
+// │                                                                      │
+// │  4. Save, then publish: git add . && git commit -m "Add product"     │
+// │     && git push                                                      │
+// └──────────────────────────────────────────────────────────────────────┘
+//
+// ── COPY-FROM-HERE TEMPLATE (fill in the values, then paste it INSIDE the
+//    product list — after the last product block, before the closing  ]; ) ──
+// {
+//   id: 99, slug: "my-new-product", name: "My New Product Name", brand: "bayer",
+//   category: "seeds", crops: ["paddy"], problems: ["crop-growth"],
+//   packSizes: ["1 kg", "5 kg"],
+//   overview: "One or two lines describing the product.",
+//   features: ["First strong point", "Second strong point", "Third strong point"],
+//   usage: "How and when to use it (short, plain language).",
+//   safety: LABEL_NOTE, image: IMG.seeds, featured: false,
+//   buyUrl: "https://example.com/buy/my-new-product",   // ← optional
+// },
+// ── COPY-UPTO-HERE ─────────────────────────────────────────────────────
 
 export const products: Product[] = [
   // ── SEEDS ──

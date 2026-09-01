@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ShoppingCart } from "lucide-react";
 import type { Product } from "../data/catalog";
-import { brandName, categoryName, cropEmoji, cropName } from "../data/catalog";
+import { brandName, categoryName, cropEmoji, cropName, productBuyUrl } from "../data/catalog";
 import { productEnquiryLink } from "../config";
 
 export default function ProductCard({ product }: { product: Product }) {
+  // Buy link for this product ("" = no buy link → name goes to details page
+  // and the 🛒 Buy Online button is hidden).
+  const buyUrl = productBuyUrl(product);
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-charcoal/8 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_-16px_rgba(11,93,42,0.25)]">
       <Link to={`/products/${product.slug}`} className="relative block aspect-square overflow-hidden bg-mint/60">
@@ -26,9 +29,23 @@ export default function ProductCard({ product }: { product: Product }) {
 
       <div className="flex flex-1 flex-col p-4">
         <p className="text-[11px] font-bold uppercase tracking-widest text-primary">{brandName(product.brand)}</p>
-        <Link to={`/products/${product.slug}`} className="mt-1 font-display text-[15px] font-semibold leading-snug text-charcoal hover:text-deep">
-          {product.name}
-        </Link>
+        {/* Product name — with a buy link set, clicking the name opens the
+            shop/buy page in a new tab; otherwise it opens the details page. */}
+        {buyUrl ? (
+          <a
+            href={buyUrl}
+            target="_blank"
+            rel="noreferrer"
+            title={`Buy ${product.name}`}
+            className="mt-1 font-display text-[15px] font-semibold leading-snug text-charcoal underline-offset-2 hover:text-deep hover:underline"
+          >
+            {product.name}
+          </a>
+        ) : (
+          <Link to={`/products/${product.slug}`} className="mt-1 font-display text-[15px] font-semibold leading-snug text-charcoal hover:text-deep">
+            {product.name}
+          </Link>
+        )}
         <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-charcoal/60">{product.overview}</p>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
@@ -52,6 +69,17 @@ export default function ProductCard({ product }: { product: Product }) {
           >
             View Details
           </Link>
+          {buyUrl && (
+            <a
+              href={buyUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Buy ${product.name} online`}
+              className="flex items-center justify-center rounded-xl bg-brand-yellow px-3 text-charcoal transition hover:bg-warm-yellow"
+            >
+              <ShoppingCart size={16} strokeWidth={2.4} />
+            </a>
+          )}
           <a
             href={productEnquiryLink(product.name)}
             target="_blank"
