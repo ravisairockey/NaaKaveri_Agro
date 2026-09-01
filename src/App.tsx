@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
+import { LangProvider } from "./lib/i18n";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingCTA from "./components/FloatingCTA";
@@ -26,32 +27,34 @@ function ScrollToTop() {
 
 export default function App() {
   return (
-    <HashRouter>
-      <ScrollToTop />
-      <div className="flex min-h-screen flex-col">
-        <Navbar />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:slug" element={<ProductDetail />} />
-            <Route path="/crops" element={<CropsPage />} />
-            <Route path="/crops/:slug" element={<CropDetailPage />} />
-            <Route path="/problems" element={<ProblemsPage />} />
-            <Route path="/problems/:slug" element={<ProblemDetailPage />} />
-            <Route path="/brands" element={<BrandsPage />} />
-            <Route path="/brands/:slug" element={<BrandDetailPage />} />
-            <Route path="/knowledge" element={<KnowledgePage />} />
-            <Route path="/knowledge/:slug" element={<ArticlePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-        <FloatingCTA />
-      </div>
-    </HashRouter>
+    <LangProvider>
+      <HashRouter>
+        <ScrollToTop />
+        <div className="flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<ProductDetail />} />
+              <Route path="/crops" element={<CropsPage />} />
+              <Route path="/crops/:slug" element={<CropDetailPage />} />
+              <Route path="/problems" element={<ProblemsPage />} />
+              <Route path="/problems/:slug" element={<ProblemDetailPage />} />
+              <Route path="/brands" element={<BrandsPage />} />
+              <Route path="/brands/:slug" element={<BrandDetailPage />} />
+              <Route path="/knowledge" element={<KnowledgePage />} />
+              <Route path="/knowledge/:slug" element={<ArticlePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/admin" element={<Admin />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+          <FloatingCTA />
+        </div>
+      </HashRouter>
+    </LangProvider>
   );
 }

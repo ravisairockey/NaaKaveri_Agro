@@ -1,30 +1,32 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, Phone, Sprout, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, Sprout, MessageCircle, Languages } from "lucide-react";
 import SearchBox from "./SearchBox";
 import { STORE, waLink } from "../config";
+import { useLang, type DictKey } from "../lib/i18n";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/products", label: "Products" },
-  { to: "/crops", label: "Shop by Crop" },
-  { to: "/problems", label: "Shop by Problem" },
-  { to: "/brands", label: "Brands" },
-  { to: "/knowledge", label: "Knowledge" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Visit Store" },
+  { to: "/", key: "navHome" as DictKey },
+  { to: "/products", key: "navProducts" as DictKey },
+  { to: "/crops", key: "navByCrop" as DictKey },
+  { to: "/problems", key: "navByProblem" as DictKey },
+  { to: "/brands", key: "navBrands" as DictKey },
+  { to: "/knowledge", key: "navKnowledge" as DictKey },
+  { to: "/about", key: "navAbout" as DictKey },
+  { to: "/contact", key: "navVisitStore" as DictKey },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { lang, toggle, t, pick } = useLang();
 
   return (
     <header className="sticky top-0 z-40">
       {/* top strip */}
       <div className="bg-deep text-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-1.5 text-[11px] font-semibold sm:text-xs">
-          <p className="truncate">📍 {STORE.addressShort}</p>
+          <p className="truncate">📍 {pick(STORE.addressShort, t("addressShortTe"))}</p>
           <a href={`tel:${STORE.phoneTel}`} className="flex shrink-0 items-center gap-1.5 hover:text-warm-yellow">
             <Phone size={12} /> {STORE.phoneDisplay}
           </a>
@@ -40,10 +42,10 @@ export default function Navbar() {
             </span>
             <span className="leading-tight">
               <span className="block font-display text-[15px] font-extrabold tracking-tight text-deep sm:text-base">
-                SRI NARAYANA
+                {t("brandName")}
               </span>
               <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-charcoal/55">
-                Seeds & Pesticides
+                {t("brandTagline")}
               </span>
             </span>
           </Link>
@@ -53,13 +55,22 @@ export default function Navbar() {
           </div>
 
           <div className="ml-auto flex items-center gap-2 lg:ml-0">
+            <button
+              onClick={toggle}
+              aria-label={lang === "en" ? "Switch to Telugu" : "Switch to English"}
+              title={lang === "en" ? "తెలుగులో చూడండి" : "View in English"}
+              className="flex h-10 items-center gap-1.5 rounded-xl border-2 border-brand-yellow bg-white px-3 text-xs font-extrabold text-deep transition hover:bg-brand-yellow/15"
+            >
+              <Languages size={15} />
+              {t("language")}
+            </button>
             <a
               href={waLink(`Hello ${STORE.name}, I would like to know about your products.`)}
               target="_blank"
               rel="noreferrer"
               className="hidden items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-xs font-extrabold text-white transition hover:brightness-95 sm:flex"
             >
-              <MessageCircle size={15} /> WhatsApp Us
+              <MessageCircle size={15} /> {t("whatsappUs")}
             </a>
             <button
               onClick={() => setOpen(!open)}
@@ -84,7 +95,7 @@ export default function Navbar() {
                 }`
               }
             >
-              {l.label}
+              {t(l.key)}
             </NavLink>
           ))}
         </nav>
@@ -115,16 +126,24 @@ export default function Navbar() {
                       }`
                     }
                   >
-                    {l.label}
+                    {t(l.key)}
                   </NavLink>
                 ))}
               </nav>
               <div className="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  onClick={toggle}
+                  aria-label={lang === "en" ? "Switch to Telugu" : "Switch to English"}
+                  className="col-span-2 flex items-center justify-center gap-2 rounded-xl border-2 border-brand-yellow bg-white py-3 text-sm font-extrabold text-deep transition hover:bg-brand-yellow/15"
+                >
+                  <Languages size={16} />
+                  {lang === "en" ? "🌐 తెలుగులో చూడండి" : "🌐 View in English"}
+                </button>
                 <a href={`tel:${STORE.phoneTel}`} className="flex items-center justify-center gap-2 rounded-xl bg-charcoal py-3 text-sm font-bold text-white">
-                  <Phone size={15} /> Call
+                  <Phone size={15} /> {t("call")}
                 </a>
                 <a href={waLink(`Hello ${STORE.name}, I would like to know about your products.`)} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 text-sm font-bold text-white">
-                  <MessageCircle size={15} /> WhatsApp
+                  <MessageCircle size={15} /> {t("whatsapp")}
                 </a>
               </div>
             </div>

@@ -1,9 +1,11 @@
 import { Phone, MessageCircle } from "lucide-react";
 import { STORE, waLink } from "../config";
+import { useLang } from "../lib/i18n";
 
 /** Floating WhatsApp button (desktop) + sticky Call/WhatsApp bar (mobile). */
 export default function FloatingCTA() {
   const msg = waLink(`Hello ${STORE.name}, I would like to know about your products.`);
+  const { t } = useLang();
   return (
     <>
       {/* desktop floating whatsapp */}
@@ -20,10 +22,10 @@ export default function FloatingCTA() {
       {/* mobile sticky bottom bar */}
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-charcoal/10 bg-charcoal/10 sm:hidden">
         <a href={`tel:${STORE.phoneTel}`} className="flex items-center justify-center gap-2 bg-charcoal py-3.5 text-sm font-extrabold text-white">
-          <Phone size={17} /> Call Store
+          <Phone size={17} /> {t("callStore")}
         </a>
         <a href={msg} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] py-3.5 text-sm font-extrabold text-white">
-          <MessageCircle size={17} /> WhatsApp
+          <MessageCircle size={17} /> {t("whatsapp")}
         </a>
       </div>
       {/* spacer so content is not hidden behind mobile bar */}

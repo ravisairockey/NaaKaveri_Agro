@@ -20,17 +20,21 @@ export const STORE = {
   whatsappNumber: "919347874855",   // WhatsApp: 91 + number, digits only
   phoneDisplay: "+91 94918 30758",  // shown on screen
   phoneTel: "+919491830758",        // call button: +91 + number, digits only
-  address: "Main Road, Near Weekly Market, Dharmavaram, ...",
-  addressShort: "Main Road, Dharmavaram, Andhra Pradesh",
+  address: "Anjuman Cir Rd, Maruthinagar, Akkpedianera, Dharmavaram, ...",
+  addressShort: "Anjuman Cir Rd, Dharmavaram",
   hours: [
     { day: "Monday – Saturday", time: "8:00 AM – 8:30 PM" },
     { day: "Sunday", time: "8:00 AM – 1:00 PM" },
   ],
-  mapsQuery: "Sri Narayana Seeds and Pesticides Dharmavaram", // Google Maps search
+  mapsQuery: "Sri Narayana Seeds and Pesticides, Anjuman Circle Road, Dharmavaram",
 };
 ```
 
 > Changing this one file updates the phone/address **everywhere** on the site (top bar, buttons, footer, contact page).
+
+### 1b. 🌐 Telugu / English button
+
+The site has a 🌐 **తెలుగు / English** toggle (top bar + mobile menu). The visitor's choice is remembered. To add or fix a translation, edit **`src/lib/i18n-dict.ts`** — every entry is a pair `[English, తెలుగు]`.
 
 ### 2. Replace photos
 

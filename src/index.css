@@ -35,3 +35,15 @@ body {
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Telugu mode: switch to a proper Telugu face with taller rhythm ── */
+html[lang="te"] {
+  --font-sans: "Noto Sans Telugu", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Noto Sans Telugu", "Sora", ui-sans-serif, system-ui, sans-serif;
+}
+html[lang="te"] body {
+  line-height: 1.7;
+}
+html[lang="te"] .font-display {
+  letter-spacing: 0;
+}

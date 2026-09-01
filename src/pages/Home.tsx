@@ -8,6 +8,8 @@ import Reveal from "../components/Reveal";
 import ProductCard from "../components/ProductCard";
 import { categories, crops, problems, brands, products, articles } from "../data/catalog";
 import { STORE, waLink, directionsLink, asset } from "../config";
+import { useLang } from "../lib/i18n";
+import { categoryTe } from "../lib/i18n-dict";
 
 const trust = [
   { icon: ShieldCheck, title: "Quality Products", text: "Genuine, sealed stock from authorised distributors only." },
@@ -18,6 +20,7 @@ const trust = [
 
 export default function Home() {
   const featured = products.filter((p) => p.featured);
+  const { t, pick } = useLang();
 
   return (
     <div>
@@ -35,31 +38,31 @@ export default function Home() {
             className="max-w-2xl"
           >
             <span className="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-widest text-charcoal">
-              🌱 Dharmavaram's Trusted Agri Store
+              🌱 {t("heroBadge")}
             </span>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
-              GROW BETTER.
+              {t("heroLine1")}
               <br />
-              GROW WITH <span className="text-warm-yellow">CONFIDENCE.</span>
+              {t("heroLine2a")} <span className="text-warm-yellow">{t("heroLine2b")}</span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-              Quality seeds, crop protection and agricultural solutions from{" "}
-              <strong className="text-white">{STORE.name}</strong> — helping the farmers of
-              Dharmavaram grow healthier, more profitable crops.
+              {t("heroSubPre")}
+              <strong className="text-white">{STORE.name}</strong>
+              {t("heroSubPost")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/products"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-yellow px-7 py-3.5 text-sm font-extrabold text-charcoal transition hover:bg-warm-yellow"
               >
-                Explore Products <ArrowRight size={17} />
+                {t("exploreProducts")} <ArrowRight size={17} />
               </Link>
               <a
                 href={waLink(`Hello ${STORE.name}, I would like to know about your products.`)}
                 target="_blank" rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-7 py-3.5 text-sm font-extrabold text-white backdrop-blur transition hover:border-[#25D366] hover:bg-[#25D366]"
               >
-                <MessageCircle size={17} /> WhatsApp Us
+                <MessageCircle size={17} /> {t("whatsappUs")}
               </a>
             </div>
           </motion.div>
@@ -91,13 +94,13 @@ export default function Home() {
         <Reveal>
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Product Categories</p>
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">{t("productCategories")}</p>
               <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">
-                Everything your crop needs
+                {t("everythingCropNeeds")}
               </h2>
             </div>
             <Link to="/products" className="hidden shrink-0 items-center gap-1.5 text-sm font-bold text-deep hover:text-primary sm:flex">
-              View all products <ArrowRight size={15} />
+              {t("viewAllProducts")} <ArrowRight size={15} />
             </Link>
           </div>
         </Reveal>
@@ -113,7 +116,7 @@ export default function Home() {
                 </div>
                 <div className="p-3.5">
                   <p className="font-display text-sm font-bold text-charcoal group-hover:text-deep">
-                    {c.emoji} {c.name}
+                    {c.emoji} {pick(c.name, categoryTe[c.slug] ?? c.name)}
                   </p>
                   <p className="mt-1 line-clamp-2 text-[11px] leading-snug text-charcoal/55">{c.blurb}</p>
                 </div>
@@ -256,7 +259,7 @@ export default function Home() {
           <Reveal delay={0.15}>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Why Sri Narayana</p>
             <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">
-              A store built on farmer trust
+              {t("storeTrust")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-charcoal/65 sm:text-base">
               Sri Narayana Seeds & Pesticides serves the farming families of Dharmavaram and
@@ -278,7 +281,7 @@ export default function Home() {
               ))}
             </ul>
             <Link to="/about" className="mt-7 inline-flex items-center gap-2 rounded-full bg-deep px-6 py-3 text-sm font-bold text-white transition hover:bg-primary">
-              About the store <ArrowRight size={15} />
+              {t("aboutStore")} <ArrowRight size={15} />
             </Link>
           </Reveal>
         </div>
