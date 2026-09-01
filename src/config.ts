@@ -34,7 +34,7 @@ export const directionsLink = `https://www.google.com/maps/search/?api=1&query=$
   STORE.mapsQuery
 )}`;
 
-// Resolve a public asset (e.g. "/images/store.jpg") so it works on ANY host —
+// Resolve a public asset (e.g. "/images/hero/store.jpg") so it works on ANY host —
 // GitHub Pages sub-path (ravisairockey.github.io/NaaKaveri_Agro/), a custom
 // domain, or local dev. Always use asset() for images instead of raw paths.
 export function asset(path: string): string {

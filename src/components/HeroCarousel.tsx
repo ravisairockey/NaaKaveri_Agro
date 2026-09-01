@@ -12,7 +12,7 @@ import { useLang } from "../lib/i18n";
 // ─────────────────────────────────────────────────────────────
 const SLIDES = [
   {
-    image: "/images/hero.jpg",
+    image: "/images/hero/hero.jpg",
     badgeEn: "Dharmavaram's Trusted Agri Store",
     badgeTe: "ధర్మవరం నమ్మకమైన వ్యవసాయ షాప్",
     line1En: "GROW BETTER.",
@@ -27,7 +27,22 @@ const SLIDES = [
     altTe: "బంగారు వెలుతురులో పచ్చని పంట పొలం",
   },
   {
-    image: "/images/store.jpg",
+    image: "/images/hero/hero2.jpg",
+    badgeEn: "Paddy Season",
+    badgeTe: "వరి సీజన్",
+    line1En: "STRONG START.",
+    line1Te: "బలమైన మొదలు.",
+    line2En: "HEALTHY",
+    line2Te: "ఆరోగ్యకరమైన",
+    accentEn: "PADDY.",
+    accentTe: "వరి పంట.",
+    subEn: "Quality paddy seeds, seedling-stage nutrition and pest control — everything your season needs, under one roof.",
+    subTe: "నాణ్యమైన వరి విత్తనాలు, నారు దశ పోషకాలు మరియు తెగుళ్ల నియంత్రణ — సీజన్‌కు కావాల్సినవన్నీ ఒకే చోట.",
+    altEn: "Farmers transplanting paddy seedlings",
+    altTe: "వరి నారు నాటుతున్న రైతులు",
+  },
+  {
+    image: "/images/hero/store.jpg",
     badgeEn: "Anjuman Cir Rd, Dharmavaram",
     badgeTe: "అంజుమాన్ సర్కిల్ రోడ్, ధర్మవరం",
     line1En: "VISIT OUR STORE.",
@@ -76,7 +91,13 @@ export default function HeroCarousel() {
 
   const slide = SLIDES[index];
   const badgeEmoji =
-    slide.image.includes("store") ? "🏪" : slide.image.includes("products") ? "💬" : "🌱";
+    slide.image.includes("store")
+      ? "🏪"
+      : slide.image.includes("hero2")
+        ? "🌾"
+        : slide.image.includes("products")
+          ? "💬"
+          : "🌱";
 
   return (
     <section className="relative overflow-hidden">

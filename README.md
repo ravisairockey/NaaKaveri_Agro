@@ -42,8 +42,8 @@ Drop a new image into `public/images/` using the **exact same file name** (repla
 
 | File | Where it appears |
 |---|---|
-| `public/images/store.jpg` | Shop photo (Home + About/Contact pages) |
-| `public/images/hero.jpg` | Homepage top banner |
+| `public/images/hero/*.jpg` | Hero slideshow (homepage) — add a photo here + one entry in `SLIDES` in `src/components/HeroCarousel.tsx` |
+| `public/images/hero/store.jpg` | Shop photo (Hero slide + About/Contact pages) |
 | `public/images/products/*.jpg` | Product category cards |
 
 Tips: keep photos under ~500 KB, roughly landscape (wide) shape. JPG format is best for photos.

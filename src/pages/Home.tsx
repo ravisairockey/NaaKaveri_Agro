@@ -207,7 +207,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 lg:grid-cols-2">
           <Reveal>
             <div className="relative">
-              <img src={asset("/images/store.jpg")} alt="Sri Narayana Seeds & Pesticides store" className="w-full rounded-3xl object-cover shadow-xl" />
+              <img src={asset("/images/hero/store.jpg")} alt="Sri Narayana Seeds & Pesticides store" className="w-full rounded-3xl object-cover shadow-xl" />
               <div className="absolute -bottom-5 left-5 rounded-2xl bg-brand-yellow px-5 py-3 shadow-lg">
                 <p className="font-display text-sm font-extrabold text-charcoal">📍 Anjuman Cir Rd, Dharmavaram</p>
               </div>
