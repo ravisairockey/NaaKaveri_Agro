@@ -176,7 +176,7 @@ export const products: Product[] = [
     overview: "Premium fine-grain paddy seed known for strong tillering, uniform maturity and excellent market preference in the Rayalaseema region.",
     features: ["High germination & vigorous seedlings", "Strong tillering habit", "Fine grain with good market demand", "Suited to Kharif & Rabi seasons"],
     usage: "Suitable for transplanted and direct-sown paddy. Sowing window and seed rate as per the seed packet label for your region.",
-    safety: LABEL_NOTE, image: IMG.seeds, featured: true,
+    safety: LABEL_NOTE, image: IMG.seeds, featured: false,
   },
   {
     id: 2, slug: "vijaya-hybrid-chilli-seeds", name: "Vijaya Hot Hybrid Chilli Seeds", brand: "nuziveedu",
@@ -185,7 +185,7 @@ export const products: Product[] = [
     overview: "A vigorous hot chilli hybrid producing long, glossy red fruit with high dry-recovery — a favourite with commercial chilli growers.",
     features: ["Long, attractive dark-red fruit", "High dry-chilli recovery", "Good tolerance to leaf curl stress", "Extended picking window"],
     usage: "Nursery-raised and transplanted. Follow packet guidance for nursery, spacing and transplanting stage.",
-    safety: LABEL_NOTE, image: IMG.seeds, featured: true,
+    safety: LABEL_NOTE, image: IMG.seeds, featured: false,
   },
   {
     id: 3, slug: "superboll-cotton-seeds", name: "SuperBoll BG-II Cotton Seeds", brand: "kaveri-seeds",
@@ -212,7 +212,7 @@ export const products: Product[] = [
     overview: "Carefully graded K-6 groundnut seed — the trusted variety of Anantapur district — cleaned and selected for high field emergence.",
     features: ["Graded, uniform kernels", "High field emergence", "Trusted regional variety", "Good pod filling & oil content"],
     usage: "Recommended with seed treatment before sowing. Ask our team about suitable seed-treatment products.",
-    safety: LABEL_NOTE, image: IMG.seeds, featured: true,
+    safety: LABEL_NOTE, image: IMG.seeds, featured: false,
   },
   {
     id: 6, slug: "greenleaf-vegetable-combo", name: "GreenLeaf Vegetable Seed Combo", brand: "syngenta",
@@ -233,7 +233,7 @@ export const products: Product[] = [
     features: ["Broad-spectrum action", "Quick knockdown of caterpillars", "Widely used & trusted formulation", "Multiple pack sizes"],
     usage: "Target pests, crop stage and application details are specified on the manufacturer's label. Use only label-listed crops.",
     safety: "Wear protective clothing, avoid spraying against the wind and keep away from children, food and water bodies. " + LABEL_NOTE,
-    image: IMG.insect, featured: true,
+    image: IMG.insect, featured: false,
   },
   {
     id: 8, slug: "stemguard-granules", name: "StemGuard 4G Granules", brand: "dhanuka",
@@ -253,7 +253,7 @@ export const products: Product[] = [
     features: ["Systemic, rain-fast action", "Effective on thrips & whitefly", "Low dose per acre", "Compatible with spray schedules"],
     usage: "Crop-wise pest targets and spray timing per the manufacturer's label.",
     safety: "Do not spray during bee activity hours; follow the pre-harvest interval printed on the label. " + LABEL_NOTE,
-    image: IMG.insect, featured: true,
+    image: IMG.insect, featured: false,
   },
   {
     id: 10, slug: "larvaend-ec", name: "LarvaEnd EC", brand: "syngenta",
@@ -275,7 +275,7 @@ export const products: Product[] = [
     features: ["Broad-spectrum protection", "Multi-site action — low resistance risk", "Economical per-acre cost", "Mixes well in schedules"],
     usage: "Crop and disease targets are listed on the manufacturer's label; use as a protective spray as directed.",
     safety: "Avoid inhaling powder while mixing; use a mask and gloves. " + LABEL_NOTE,
-    image: IMG.fungi, featured: true,
+    image: IMG.fungi, featured: false,
   },
   {
     id: 12, slug: "blastshield-sc", name: "BlastShield SC", brand: "bayer",
@@ -285,7 +285,7 @@ export const products: Product[] = [
     features: ["Systemic & curative action", "Targets blast + sheath blight", "Protects panicle stage", "Trusted paddy fungicide"],
     usage: "Spray timing for nursery, tillering and panicle stages is specified on the label.",
     safety: "Do not enter the sprayed field until the re-entry period is over. " + LABEL_NOTE,
-    image: IMG.fungi, featured: true,
+    image: IMG.fungi, featured: false,
   },
   {
     id: 13, slug: "powdervanish-sl", name: "PowderVanish SL", brand: "rallis",
@@ -315,7 +315,7 @@ export const products: Product[] = [
     features: ["Systemic — kills weeds to the root", "Broad weed spectrum", "Economical field clearing", "Rain-fast after drying"],
     usage: "Use only in situations permitted on the label. Avoid drift onto standing crops.",
     safety: "Use a dedicated sprayer or triple-rinse equipment after use; keep away from desirable plants. " + LABEL_NOTE,
-    image: IMG.herb, featured: true,
+    image: IMG.herb, featured: false,
   },
   {
     id: 16, slug: "paddyclean-ec", name: "PaddyClean Selective EC", brand: "pi-industries",
@@ -344,7 +344,7 @@ export const products: Product[] = [
     overview: "Seaweed-based bio stimulant that supports root development, stress recovery and overall plant vigour across crops.",
     features: ["Boosts root & shoot growth", "Helps crops recover from stress", "Suitable for all major crops", "Foliar or drip application"],
     usage: "Foliar spray or fertigation as per pack directions.",
-    safety: LABEL_NOTE, image: IMG.care, featured: true,
+    safety: LABEL_NOTE, image: IMG.care, featured: false,
   },
   {
     id: 19, slug: "microboost-zn-b", name: "MicroBoost Zinc + Boron", brand: "coromandel",
@@ -374,7 +374,7 @@ export const products: Product[] = [
     features: ["Protects seed & seedlings", "Improves field emergence", "Easy slurry treatment", "Small packs for marginal farmers"],
     usage: "Seed treatment rate per kg of seed is given on the label; treat and shade-dry before sowing.",
     safety: "Treated seed must never be used for food or feed. " + LABEL_NOTE,
-    image: IMG.treat, featured: true,
+    image: IMG.treat, featured: false,
   },
   {
     id: 22, slug: "rhizogold-culture", name: "RhizoGold Bio Culture", brand: "coromandel",

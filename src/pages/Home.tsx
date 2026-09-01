@@ -91,7 +91,7 @@ export default function Home() {
               <div>
                 <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Featured Products</p>
                 <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">
-                  Farmer favourites, in stock now
+                  {featured.length === 1 ? "This season's featured pick" : "Farmer favourites, in stock now"}
                 </h2>
               </div>
               <Link to="/products" className="hidden shrink-0 items-center gap-1.5 text-sm font-bold text-deep hover:text-primary sm:flex">
@@ -99,7 +99,7 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className={featured.length === 1 ? "mx-auto mt-8 max-w-sm" : "mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4"}>
             {featured.slice(0, 8).map((p, i) => (
               <Reveal key={p.id} delay={(i % 4) * 0.06}>
                 <ProductCard product={p} />
