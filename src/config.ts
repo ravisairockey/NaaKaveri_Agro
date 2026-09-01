@@ -11,13 +11,13 @@ export const STORE = {
   whatsappNumber: "919347874855",
   phoneDisplay: "+91 94918 30758",
   phoneTel: "+919491830758",
-  address: "Main Road, Near Weekly Market, Dharmavaram, Sri Sathya Sai District, Andhra Pradesh 515671",
-  addressShort: "Main Road, Dharmavaram, Andhra Pradesh",
+  address: "Anjuman Cir Rd, Maruthinagar, Akkpedianera, Dharmavaram, Andhra Pradesh 515671",
+  addressShort: "Anjuman Cir Rd, Dharmavaram",
   hours: [
     { day: "Monday – Saturday", time: "8:00 AM – 8:30 PM" },
     { day: "Sunday", time: "8:00 AM – 1:00 PM" },
   ],
-  mapsQuery: "Sri Narayana Seeds and Pesticides Dharmavaram",
+  mapsQuery: "Sri Narayana Seeds and Pesticides, Anjuman Circle Road, Dharmavaram",
 };
 
 export function waLink(message: string): string {

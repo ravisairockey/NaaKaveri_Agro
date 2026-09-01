@@ -14,7 +14,7 @@ export function AboutPage() {
     { icon: ShieldCheck, title: "Genuine Products Only", text: "Every product on our shelves comes from authorised distributors — sealed, billed and traceable." },
     { icon: HeartHandshake, title: "Honest Guidance", text: "We recommend what your crop needs, not what earns us more. Farmers return because advice here is straight." },
     { icon: Leaf, title: "Respect for the Label", text: "We explain the manufacturer's label clearly and never suggest off-label use of crop protection products." },
-    { icon: Store, title: "Here Every Season", text: "A physical store on Main Road, Dharmavaram — open through sowing, spraying and harvest seasons." },
+    { icon: Store, title: "Here Every Season", text: "A physical store on Anjuman Cir Rd, Dharmavaram — open through sowing, spraying and harvest seasons." },
   ];
 
   return (
@@ -27,7 +27,7 @@ export function AboutPage() {
               Serving the farmers of Dharmavaram
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-white/75 sm:text-base">
-              {STORE.name} is a family-run agricultural inputs store on Main Road, Dharmavaram.
+              {STORE.name} is a family-run agricultural inputs store on Anjuman Cir Rd, Dharmavaram.
               We supply quality seed, crop protection and plant nutrition to farming families
               across Dharmavaram and the surrounding villages — with advice given the way it
               should be: honestly, patiently and in Telugu.

@@ -13,7 +13,7 @@ const trust = [
   { icon: ShieldCheck, title: "Quality Products", text: "Genuine, sealed stock from authorised distributors only." },
   { icon: Leaf, title: "Trusted Brands", text: "Bayer, Syngenta, UPL, Rallis and more under one roof." },
   { icon: HeartHandshake, title: "Farmer-Focused Support", text: "Honest guidance in Telugu — bring your problem, we'll help." },
-  { icon: Store, title: "Local Store, Real People", text: "Visit us on Main Road, Dharmavaram — we're here every day." },
+  { icon: Store, title: "Local Store, Real People", text: "Visit us on Anjuman Cir Rd, Dharmavaram — we're here every day." },
 ];
 
 export default function Home() {
@@ -249,7 +249,7 @@ export default function Home() {
             <div className="relative">
               <img src={asset("/images/store.jpg")} alt="Sri Narayana Seeds & Pesticides store" className="w-full rounded-3xl object-cover shadow-xl" />
               <div className="absolute -bottom-5 left-5 rounded-2xl bg-brand-yellow px-5 py-3 shadow-lg">
-                <p className="font-display text-sm font-extrabold text-charcoal">📍 Main Road, Dharmavaram</p>
+                <p className="font-display text-sm font-extrabold text-charcoal">📍 Anjuman Cir Rd, Dharmavaram</p>
               </div>
             </div>
           </Reveal>
