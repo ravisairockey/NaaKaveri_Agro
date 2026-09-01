@@ -38,7 +38,7 @@ export function AboutPage() {
 
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 lg:grid-cols-2">
         <Reveal>
-          <img src={asset("/images/hero/store.jpg")} alt="Our store" className="w-full rounded-3xl object-cover shadow-xl" />
+          <img src={asset("/images/store/store.jpg")} alt="Our store" className="w-full rounded-3xl object-cover shadow-xl" />
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">

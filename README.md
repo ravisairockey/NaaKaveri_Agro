@@ -1,6 +1,6 @@
 # Sri Narayana Seeds & Pesticides — Website
 
-Premium website for **Sri Narayana Seeds & Pesticides**, Main Road, Dharmavaram.
+Premium website for **Sri Narayana Seeds & Pesticides**, Dharmavaram, Andhra Pradesh.
 
 - 🌐 **Live site:** https://ravisairockey.github.io/NaaKaveri_Agro/
 - ⚙️ Built with React + Vite + Tailwind CSS
@@ -42,8 +42,8 @@ Drop a new image into `public/images/` using the **exact same file name** (repla
 
 | File | Where it appears |
 |---|---|
-| `public/images/hero/*.jpg` | Hero slideshow (homepage) — add a photo here + one entry in `SLIDES` in `src/components/HeroCarousel.tsx` |
-| `public/images/hero/store.jpg` | Shop photo (Hero slide + About/Contact pages) |
+| `public/images/hero/*.jpg` | Hero slideshow (homepage) — this folder is for the carousel ONLY. Add a photo here + one entry in `SLIDES` in `src/components/HeroCarousel.tsx` |
+| `public/images/store/store.jpg` | Shop photo (About/Contact pages) |
 | `public/images/products/*.jpg` | Product category cards |
 
 Tips: keep photos under ~500 KB, roughly landscape (wide) shape. JPG format is best for photos.

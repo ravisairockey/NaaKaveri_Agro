@@ -42,34 +42,34 @@ const SLIDES = [
     altTe: "వరి నారు నాటుతున్న రైతులు",
   },
   {
-    image: "/images/hero/store.jpg",
-    badgeEn: "Anjuman Cir Rd, Dharmavaram",
-    badgeTe: "అంజుమాన్ సర్కిల్ రోడ్, ధర్మవరం",
-    line1En: "VISIT OUR STORE.",
-    line1Te: "మా షాప్‌కు రండి.",
-    line2En: "REAL PEOPLE,",
-    line2Te: "నిజమైన సలహా,",
-    accentEn: "REAL ADVICE.",
-    accentTe: "నిజమైన ప్రజలు.",
-    subEn: "Genuine, sealed products with proper bills — and we take the time to explain every label in Telugu.",
-    subTe: "అసలైన, సీల్ చేసిన ఉత్పత్తులు సరైన బిల్లులతో — ప్రతి లేబుల్ తెలుగులో వివరించి చెబుతాము.",
-    altEn: "Sri Narayana Seeds & Pesticides store",
-    altTe: "శ్రీ నారాయణ సీడ్స్ & పెస్టిసైడ్స్ షాప్",
+    image: "/images/hero/hero3.jpg",
+    badgeEn: "Dharmavaram Farmers",
+    badgeTe: "ధర్మవరం రైతులు",
+    line1En: "HARD WORK.",
+    line1Te: "కృషి చేస్తే,",
+    line2En: "HEALTHY",
+    line2Te: "మంచి",
+    accentEn: "HARVEST.",
+    accentTe: "పంట వస్తుంది.",
+    subEn: "From weed control to crop protection at every stage — we stand with the farmers of Dharmavaram through the whole season.",
+    subTe: "కలుపు నియంత్రణ నుంచి పంట రక్షణ వరకు — ప్రతి దశలో ధర్మవరం రైతులకు మేము తోడు.",
+    altEn: "Farmers working in a green field",
+    altTe: "పొలంలో పనిచేస్తున్న రైతులు",
   },
   {
-    image: "/images/products/seeds.jpg",
-    badgeEn: "WhatsApp Ordering",
-    badgeTe: "వాట్సాప్‌లో ఆర్డర్",
-    line1En: "NEED SEEDS OR",
-    line1Te: "విత్తనాలు లేదా",
-    line2En: "MEDICINES?",
-    line2Te: "మందులు కావాలా?",
-    accentEn: "JUST MESSAGE US.",
-    accentTe: "మాకు మెసేజ్ చేయండి.",
-    subEn: "Send your list on WhatsApp — we'll keep it packed and ready before you reach the store.",
-    subTe: "మీ జాబితా వాట్సాప్‌లో పంపండి — మీరు షాప్‌కు రాకముందే ప్యాక్ చేసి సిద్ధంగా ఉంచుతాము.",
-    altEn: "High-germination hybrid seeds",
-    altTe: "అధిక మొక్కల విత్తనాలు",
+    image: "/images/hero/Siri-Green_Packshot.jpg",
+    badgeEn: "Siri-Green Hybrid SSG — In Stock",
+    badgeTe: "సిరి-గ్రీన్ హైబ్రిడ్ SSG — స్టాక్‌లో ఉంది",
+    line1En: "SIRI-GREEN",
+    line1Te: "సిరి-గ్రీన్",
+    line2En: "FODDER",
+    line2Te: "పశుగ్రాసం",
+    accentEn: "JOWAR.",
+    accentTe: "జోన్నా.",
+    subEn: "Excellent fodder jowar with high crude protein — a Siri Seeds hybrid trusted for 25+ years. Ask us for sowing and dosage advice.",
+    subTe: "అధిక ప్రొటీన్ ఉన్న అద్భుతమైన పశుగ్రాసం జోన్నా హైబ్రిడ్ — 25 ఏళ్ల నమ్మకం, సిరి సీడ్స్. విత్తు సలహా కోసం మమ్మల్ని అడగండి.",
+    altEn: "Siri-Green Hybrid SSG fodder jowar seed pack",
+    altTe: "సిరి-గ్రీన్ హైబ్రిడ్ SSG విత్తన ప్యాక్",
   },
 ];
 
@@ -90,14 +90,11 @@ export default function HeroCarousel() {
   }, [index, next]);
 
   const slide = SLIDES[index];
-  const badgeEmoji =
-    slide.image.includes("store")
-      ? "🏪"
-      : slide.image.includes("hero2")
-        ? "🌾"
-        : slide.image.includes("products")
-          ? "💬"
-          : "🌱";
+  const badgeEmoji = slide.image.includes("hero2")
+    ? "🌾"
+    : slide.image.includes("hero3")
+      ? "🌿"
+      : "🌱";
 
   return (
     <section className="relative overflow-hidden">
