@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep: #0B5D2A;
+  --color-primary: #168A3A;
+  --color-brand-yellow: #F4C400;
+  --color-warm-yellow: #FFD84D;
+  --color-cream: #FFFDF5;
+  --color-charcoal: #172018;
+  --color-mint: #EAF5EC;
+
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-warm-yellow);
+  color: var(--color-charcoal);
+}
+
+/* thin scrollbars for filter rails */
+.nice-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+.nice-scroll::-webkit-scrollbar-thumb { background: #cfe3d4; border-radius: 999px; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
