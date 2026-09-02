@@ -114,15 +114,15 @@ export const brands: Brand[] = [
   { slug: "spic", name: "SPIC", logo: asset("/images/brands/spic.png"), blurb: "Southern Petrochemical Industries Corporation Ltd." },
   // ── Monogram tiles (drop a PNG into public/images/brands/<slug>.png and add
   //    logo: asset("/images/brands/<slug>.png"), to auto-promote to the top row) ──
-  { slug: "indian-potash", name: "Indian Potash Limited (IPL)", blurb: "India's leading potassic fertiliser company since 1955." },
-  { slug: "dcs", name: "DCS — Dhana Crop Science", blurb: "Trusted crop protection for local farmers." },
+  { slug: "indian-potash", name: "Indian Potash Limited (IPL)", logo: asset("/images/brands/indian-potash.jpg"), blurb: "India's leading potassic fertiliser company since 1955." },
+  { slug: "dcs", name: "Dhana Crop Sciences (DCS)", logo: asset("/images/brands/dcs.png"), blurb: "Agrochemical formulations & DCS Seeds — Hyderabad, since 1990." },
   { slug: "rhyme-organics", name: "Rhyme Organics & Chemicals", blurb: "Organic inputs & crop care chemistry." },
   { slug: "kavitha", name: "Kavitha Life Sciences", blurb: "Life-science crop solutions for every season." },
-  { slug: "sklose", name: "Sklose Crop Care Pvt. Ltd.", blurb: "Dedicated crop care formulations." },
+  { slug: "skylose", name: "Skylose Crop Care Pvt. Ltd.", blurb: "Nurture. Protect. Thrive. — dedicated crop care." },
   { slug: "sk-healthcare", name: "SK Health Care Formulations Pvt. Ltd.", blurb: "Trusted formulation partner for agri inputs." },
   { slug: "krishchem", name: "Krishchem Pvt. Ltd.", blurb: "Agro-chemistry for healthy crops." },
-  { slug: "formova", name: "Formova Chemicals & Fertilizers Pvt. Ltd.", blurb: "Chemicals & fertilizers for balanced nutrition." },
-  { slug: "amruth", name: "Amruth Fertilizers", blurb: "Soil nutrition the farm can rely on." },
+  { slug: "farmova", name: "Farmova Chemicals & Fertilizers Pvt. Ltd.", logo: asset("/images/brands/farmova.webp"), blurb: "Organic & bio-fertilizers for soil health — Hyderabad." },
+  { slug: "amruth", name: "Amruth Organic Fertilizers", logo: asset("/images/brands/amruth.png"), blurb: "Bio-fertilizers, organic manure & bio-potash — Karnataka." },
   { slug: "random-agrovet", name: "Random Agrovet Pvt. Ltd.", blurb: "Agro-veterinary & crop input solutions." },
 ];
 
