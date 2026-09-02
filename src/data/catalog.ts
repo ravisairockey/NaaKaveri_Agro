@@ -103,27 +103,27 @@ export const brands: Brand[] = [
   { slug: "adama", name: "ADAMA", logo: asset("/images/brands/adama.png"), blurb: "Global crop protection & life-science solutions." },
   { slug: "advance-pesticides", name: "Advance Pesticides", logo: asset("/images/brands/advance-pesticides.png"), blurb: "Growth regulators, fungicides & weedicides." },
   { slug: "aimco", name: "Hindusthan Crop Science (AIMCO)", logo: asset("/images/brands/aimco.png"), blurb: "Agrochemical formulations from Aimco Pesticides Ltd." },
+  { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", logo: asset("/images/brands/barrix.svg"), blurb: "Eco-friendly pest management science." },
   { slug: "east-west-seeds", name: "East West Seeds", logo: asset("/images/brands/east-west-seeds.png"), blurb: "World-class vegetable seeds for tropical farming." },
   { slug: "fact", name: "FACT — Fertilisers & Chemicals Travancore", logo: asset("/images/brands/fact.png"), blurb: "Kerala's pioneering fertiliser PSU since 1943." },
   { slug: "iffco", name: "IFFCO", logo: asset("/images/brands/iffco.png"), blurb: "Farmer-owned cooperative — fertilisers & plant nutrition." },
+  { slug: "indogulf", name: "Indogulf Cropsciences", logo: asset("/images/brands/indogulf.png"), blurb: "Crop protection, plant nutrients & biologicals — New Delhi." },
+  { slug: "jai-kisaan", name: "Jai Kisaan Fertilizers", logo: asset("/images/brands/jai-kisaan.png"), blurb: "Fertilizers & agri-retail services by Paradeep Phosphates Ltd." },
+  { slug: "mangala", name: "Mangala Fertilizers", logo: asset("/images/brands/mangala.png"), blurb: "Paradeep Phosphates' Mangala range of complex fertilizers." },
+  { slug: "nirmala-biotech", name: "Nirmala Biotech", logo: asset("/images/brands/nirmala-biotech.png"), blurb: "Biofertilizers, micronutrients & PGRs — Nashik." },
   { slug: "spic", name: "SPIC", logo: asset("/images/brands/spic.png"), blurb: "Southern Petrochemical Industries Corporation Ltd." },
   // ── Monogram tiles (drop a PNG into public/images/brands/<slug>.png and add
   //    logo: asset("/images/brands/<slug>.png"), to auto-promote to the top row) ──
   { slug: "indian-potash", name: "Indian Potash Limited (IPL)", blurb: "India's leading potassic fertiliser company since 1955." },
-  { slug: "indogulf", name: "Indogulf Cropsciences", blurb: "Agrochemical formulations & exports, Ahmedabad." },
   { slug: "dcs", name: "DCS — Dhana Crop Science", blurb: "Trusted crop protection for local farmers." },
   { slug: "rhyme-organics", name: "Rhyme Organics & Chemicals", blurb: "Organic inputs & crop care chemistry." },
   { slug: "kavitha", name: "Kavitha Life Sciences", blurb: "Life-science crop solutions for every season." },
-  { slug: "nirmal-seeds", name: "Nirmal Seeds", blurb: "Quality vegetable & field crop seeds." },
   { slug: "sklose", name: "Sklose Crop Care Pvt. Ltd.", blurb: "Dedicated crop care formulations." },
   { slug: "sk-healthcare", name: "SK Health Care Formulations Pvt. Ltd.", blurb: "Trusted formulation partner for agri inputs." },
   { slug: "krishchem", name: "Krishchem Pvt. Ltd.", blurb: "Agro-chemistry for healthy crops." },
   { slug: "formova", name: "Formova Chemicals & Fertilizers Pvt. Ltd.", blurb: "Chemicals & fertilizers for balanced nutrition." },
   { slug: "amruth", name: "Amruth Fertilizers", blurb: "Soil nutrition the farm can rely on." },
   { slug: "random-agrovet", name: "Random Agrovet Pvt. Ltd.", blurb: "Agro-veterinary & crop input solutions." },
-  { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", blurb: "Eco-friendly pest management science." },
-  { slug: "jaikishan", name: "Jaikishan Fertilizers", blurb: "Trusted fertiliser supplies for local farms." },
-  { slug: "mangala", name: "Mangala Fertilizers", blurb: "Quality fertilizers for healthy soils." },
 ];
 
 // LEGACY placeholder brands — some sample products still reference these slugs.
