@@ -103,7 +103,7 @@ export const brands: Brand[] = [
   { slug: "adama", name: "ADAMA", logo: asset("/images/brands/adama.png"), blurb: "Global crop protection & life-science solutions." },
   { slug: "advance-pesticides", name: "Advance Pesticides", logo: asset("/images/brands/advance-pesticides.png"), blurb: "Growth regulators, fungicides & weedicides." },
   { slug: "aimco", name: "Hindusthan Crop Science (AIMCO)", logo: asset("/images/brands/aimco.png"), blurb: "Agrochemical formulations from Aimco Pesticides Ltd." },
-  { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", logo: asset("/images/brands/barrix.svg"), blurb: "Eco-friendly pest management science." },
+  { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", logo: asset("/images/brands/Barrix.png"), blurb: "Eco-friendly pest management science." },
   { slug: "east-west-seeds", name: "East West Seeds", logo: asset("/images/brands/east-west-seeds.png"), blurb: "World-class vegetable seeds for tropical farming." },
   { slug: "fact", name: "FACT — Fertilisers & Chemicals Travancore", logo: asset("/images/brands/fact.png"), blurb: "Kerala's pioneering fertiliser PSU since 1943." },
   { slug: "iffco", name: "IFFCO", logo: asset("/images/brands/iffco.png"), blurb: "Farmer-owned cooperative — fertilisers & plant nutrition." },
@@ -119,7 +119,7 @@ export const brands: Brand[] = [
   { slug: "rhyme-organics", name: "Rhyme Organics & Chemicals", blurb: "Organic inputs & crop care chemistry." },
   { slug: "kavitha", name: "Kavitha Life Sciences", logo: asset("/images/brands/kavitha.png"), blurb: "Micronutrients, organic fertilizers & biologicals — Hyderabad." },
   { slug: "skylose", name: "Skylose Crop Care Pvt. Ltd.", logo: asset("/images/brands/skylose.png"), blurb: "Plant health technology solutions since 2017." },
-  { slug: "sk-healthcare", name: "SK Health Care Formulations Pvt. Ltd.", blurb: "Trusted formulation partner for agri inputs." },
+  
   { slug: "krishchem", name: "Krishchem", logo: asset("/images/brands/krishchem.jpg"), blurb: "Water-soluble fertilizers, micronutrients & growth promoters — Tadipatri, AP." },
   { slug: "farmova", name: "Farmova Chemicals & Fertilizers Pvt. Ltd.", logo: asset("/images/brands/farmova.webp"), blurb: "Organic & bio-fertilizers for soil health — Hyderabad." },
   { slug: "amruth", name: "Amruth Organic Fertilizers", logo: asset("/images/brands/amruth.png"), blurb: "Bio-fertilizers, organic manure & bio-potash — Karnataka." },
