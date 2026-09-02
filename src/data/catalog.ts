@@ -32,6 +32,7 @@ export interface Brand {
   slug: string;
   name: string;
   blurb: string;
+  logo?: string; // optional — save a PNG to public/images/brands/<slug>.png and reference with asset()
 }
 
 export interface Product {
@@ -93,7 +94,32 @@ export const problems: Problem[] = [
 ];
 
 // ── Brands ──────────────────────────────────────────────────
+// HOW TO ADD / REPLACE A BRAND LOGO (no coding needed):
+//   1. Save the logo as a PNG here:   public/images/brands/<slug>.png
+//   2. Add this line to that brand below:   logo: asset("/images/brands/<slug>.png"),
+//   (No logo file? The site shows a clean monogram tile instead — nothing breaks.)
 export const brands: Brand[] = [
+  { slug: "adama", name: "ADAMA", logo: asset("/images/brands/adama.png"), blurb: "Global crop protection & life-science solutions." },
+  { slug: "indogulf", name: "Indogulf Cropsciences", blurb: "Agrochemical formulations & exports, Ahmedabad." },
+  { slug: "dcs", name: "DCS — Dhana Crop Science", blurb: "Trusted crop protection for local farmers." },
+  { slug: "aimco", name: "Hindusthan Crop Science (AIMCO)", logo: asset("/images/brands/aimco.png"), blurb: "Agrochemical formulations from Aimco Pesticides Ltd." },
+  { slug: "rhyme-organics", name: "Rhyme Organics & Chemicals", blurb: "Organic inputs & crop care chemistry." },
+  { slug: "advance-pesticides", name: "Advance Pesticides", logo: asset("/images/brands/advance-pesticides.png"), blurb: "Growth regulators, fungicides & weedicides." },
+  { slug: "kavitha", name: "Kavitha Life Sciences", blurb: "Life-science crop solutions for every season." },
+  { slug: "nirmal-seeds", name: "Nirmal Seeds", blurb: "Quality vegetable & field crop seeds." },
+  { slug: "sklose", name: "Sklose Crop Care Pvt. Ltd.", blurb: "Dedicated crop care formulations." },
+  { slug: "sk-healthcare", name: "SK Health Care Formulations Pvt. Ltd.", blurb: "Trusted formulation partner for agri inputs." },
+  { slug: "krishchem", name: "Krishchem Pvt. Ltd.", blurb: "Agro-chemistry for healthy crops." },
+  { slug: "formova", name: "Formova Chemicals & Fertilizers Pvt. Ltd.", blurb: "Chemicals & fertilizers for balanced nutrition." },
+  { slug: "amruth", name: "Amruth Fertilizers", blurb: "Soil nutrition the farm can rely on." },
+  { slug: "random-agrovet", name: "Random Agrovet Pvt. Ltd.", blurb: "Agro-veterinary & crop input solutions." },
+  { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", blurb: "Eco-friendly pest management science." },
+];
+
+// LEGACY placeholder brands — some sample products still reference these slugs.
+// Kept ONLY so product cards/details resolve the correct brand name.
+// They are NOT shown in any brand listing.
+export const legacyBrands: Brand[] = [
   { slug: "bayer", name: "Bayer", blurb: "Global leader in crop science & protection." },
   { slug: "syngenta", name: "Syngenta", blurb: "World-class seeds and crop protection." },
   { slug: "upl", name: "UPL", blurb: "Sustainable agricultural solutions." },
@@ -485,7 +511,10 @@ export const articles: Article[] = [
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────
-export const brandName = (slug: string) => brands.find((b) => b.slug === slug)?.name ?? slug;
+export const brandName = (slug: string) =>
+  brands.find((b) => b.slug === slug)?.name ??
+  legacyBrands.find((b) => b.slug === slug)?.name ??
+  slug;
 export const categoryName = (slug: string) => categories.find((c) => c.slug === slug)?.name ?? slug;
 export const cropName = (slug: string) => crops.find((c) => c.slug === slug)?.name ?? slug;
 export const cropEmoji = (slug: string) => crops.find((c) => c.slug === slug)?.emoji ?? "🌱";

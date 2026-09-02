@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { ChevronRight, MessageCircle } from "lucide-react";
 import Reveal from "../components/Reveal";
 import ProductCard from "../components/ProductCard";
+import BrandLogo from "../components/BrandLogo";
 import { crops, problems, brands, products, categories, categoryName } from "../data/catalog";
 import { STORE, waLink } from "../config";
 import NotFound from "./NotFound";
@@ -200,12 +201,13 @@ export function BrandsPage() {
               to={`/brands/${b.slug}`}
               className="group flex h-full flex-col rounded-3xl border border-charcoal/8 bg-white p-6 transition hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
             >
-              <span className="font-display text-xl font-extrabold tracking-tight text-charcoal group-hover:text-deep">
+                            <BrandLogo name={b.name} logo={b.logo} />
+              <span className="mt-3 font-display text-base font-extrabold leading-snug tracking-tight text-charcoal group-hover:text-deep">
                 {b.name}
               </span>
               <p className="mt-2 flex-1 text-xs leading-relaxed text-charcoal/55">{b.blurb}</p>
               <p className="mt-4 text-xs font-extrabold text-primary">
-                {products.filter((p) => p.brand === b.slug).length} products →
+                {products.filter((p) => p.brand === b.slug).length > 0 ? products.filter((p) => p.brand === b.slug).length + " products →" : "Available in store →"}
               </p>
             </Link>
           </Reveal>

@@ -6,6 +6,7 @@ import {
 import Reveal from "../components/Reveal";
 import ProductCard from "../components/ProductCard";
 import HeroCarousel from "../components/HeroCarousel";
+import BrandLogo from "../components/BrandLogo";
 import { categories, crops, problems, brands, products, articles } from "../data/catalog";
 import { STORE, waLink, directionsLink, asset } from "../config";
 import { useLang } from "../lib/i18n";
@@ -13,7 +14,7 @@ import { categoryTe } from "../lib/i18n-dict";
 
 const trust = [
   { icon: ShieldCheck, title: "Quality Products", text: "Genuine, sealed stock from authorised distributors only." },
-  { icon: Leaf, title: "Trusted Brands", text: "Bayer, Syngenta, UPL, Rallis and more under one roof." },
+  { icon: Leaf, title: "Trusted Brands", text: "ADAMA, Indogulf, AIMCO, Nirmal Seeds and many more under one roof." },
   { icon: HeartHandshake, title: "Farmer-Focused Support", text: "Honest guidance in Telugu — bring your problem, we'll help." },
   { icon: Store, title: "Local Store, Real People", text: "Visit us on Anjuman Cir Rd, Dharmavaram — we're here every day." },
 ];
@@ -173,32 +174,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUSTED BRANDS ── */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
-        <Reveal>
-          <div className="text-center">
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Trusted Agricultural Brands</p>
-            <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">
-              The brands farmers trust, under one roof
-            </h2>
+            {/* ── TRUSTED BRANDS ── */}
+      <section className="relative overflow-hidden bg-mint/40 py-16 sm:py-20">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-warm-yellow/25 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-4">
+          <Reveal>
+            <div className="text-center">
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-primary">Trusted Agricultural Brands</p>
+              <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-charcoal sm:text-3xl">
+                The brands farmers trust, under one roof
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-charcoal/60">
+                Genuine, sealed stock from 15 leading agri-input companies — sourced only through
+                authorised distributors.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+            {brands.map((b, i) => (
+              <Reveal key={b.slug} delay={(i % 5) * 0.05}>
+                <Link
+                  to={`/brands/${b.slug}`}
+                  className="group flex h-full flex-col items-center justify-center rounded-2xl border border-charcoal/8 bg-white px-4 py-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_40px_-16px_rgba(11,93,42,0.25)]"
+                >
+                  <BrandLogo name={b.name} logo={b.logo} />
+                  <span className="mt-3 font-display text-sm font-extrabold leading-snug tracking-tight text-charcoal/80 transition-colors group-hover:text-deep">
+                    {b.name}
+                  </span>
+                  <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-charcoal/40 opacity-0 transition group-hover:opacity-100">
+                    View products
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {brands.map((b, i) => (
-            <Reveal key={b.slug} delay={(i % 6) * 0.04}>
-              <Link
-                to={`/brands/${b.slug}`}
-                className="group flex h-full flex-col items-center justify-center rounded-2xl border border-charcoal/8 bg-white px-4 py-6 text-center transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-              >
-                <span className="font-display text-base font-extrabold tracking-tight text-charcoal/80 group-hover:text-deep">
-                  {b.name}
-                </span>
-                <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-charcoal/40">
-                  View products
-                </span>
-              </Link>
-            </Reveal>
-          ))}
+          <Reveal delay={0.15}>
+            <p className="mt-10 text-center text-xs font-semibold leading-relaxed text-charcoal/45">
+              …and many more regional brands on our shelves. Looking for something specific?
+              Message us — if it exists, we will get it for you.
+            </p>
+          </Reveal>
         </div>
       </section>
 
