@@ -99,12 +99,20 @@ export const problems: Problem[] = [
 //   2. Add this line to that brand below:   logo: asset("/images/brands/<slug>.png"),
 //   (No logo file? The site shows a clean monogram tile instead — nothing breaks.)
 export const brands: Brand[] = [
+  // ── With logos (shown first in every brand listing) ──
   { slug: "adama", name: "ADAMA", logo: asset("/images/brands/adama.png"), blurb: "Global crop protection & life-science solutions." },
+  { slug: "advance-pesticides", name: "Advance Pesticides", logo: asset("/images/brands/advance-pesticides.png"), blurb: "Growth regulators, fungicides & weedicides." },
+  { slug: "aimco", name: "Hindusthan Crop Science (AIMCO)", logo: asset("/images/brands/aimco.png"), blurb: "Agrochemical formulations from Aimco Pesticides Ltd." },
+  { slug: "east-west-seeds", name: "East West Seeds", logo: asset("/images/brands/east-west-seeds.png"), blurb: "World-class vegetable seeds for tropical farming." },
+  { slug: "fact", name: "FACT — Fertilisers & Chemicals Travancore", logo: asset("/images/brands/fact.png"), blurb: "Kerala's pioneering fertiliser PSU since 1943." },
+  { slug: "iffco", name: "IFFCO", logo: asset("/images/brands/iffco.png"), blurb: "Farmer-owned cooperative — fertilisers & plant nutrition." },
+  { slug: "spic", name: "SPIC", logo: asset("/images/brands/spic.png"), blurb: "Southern Petrochemical Industries Corporation Ltd." },
+  // ── Monogram tiles (drop a PNG into public/images/brands/<slug>.png and add
+  //    logo: asset("/images/brands/<slug>.png"), to auto-promote to the top row) ──
+  { slug: "indian-potash", name: "Indian Potash Limited (IPL)", blurb: "India's leading potassic fertiliser company since 1955." },
   { slug: "indogulf", name: "Indogulf Cropsciences", blurb: "Agrochemical formulations & exports, Ahmedabad." },
   { slug: "dcs", name: "DCS — Dhana Crop Science", blurb: "Trusted crop protection for local farmers." },
-  { slug: "aimco", name: "Hindusthan Crop Science (AIMCO)", logo: asset("/images/brands/aimco.png"), blurb: "Agrochemical formulations from Aimco Pesticides Ltd." },
   { slug: "rhyme-organics", name: "Rhyme Organics & Chemicals", blurb: "Organic inputs & crop care chemistry." },
-  { slug: "advance-pesticides", name: "Advance Pesticides", logo: asset("/images/brands/advance-pesticides.png"), blurb: "Growth regulators, fungicides & weedicides." },
   { slug: "kavitha", name: "Kavitha Life Sciences", blurb: "Life-science crop solutions for every season." },
   { slug: "nirmal-seeds", name: "Nirmal Seeds", blurb: "Quality vegetable & field crop seeds." },
   { slug: "sklose", name: "Sklose Crop Care Pvt. Ltd.", blurb: "Dedicated crop care formulations." },
@@ -114,6 +122,8 @@ export const brands: Brand[] = [
   { slug: "amruth", name: "Amruth Fertilizers", blurb: "Soil nutrition the farm can rely on." },
   { slug: "random-agrovet", name: "Random Agrovet Pvt. Ltd.", blurb: "Agro-veterinary & crop input solutions." },
   { slug: "barrix", name: "Barrix Agro Sciences Pvt. Ltd.", blurb: "Eco-friendly pest management science." },
+  { slug: "jaikishan", name: "Jaikishan Fertilizers", blurb: "Trusted fertiliser supplies for local farms." },
+  { slug: "mangala", name: "Mangala Fertilizers", blurb: "Quality fertilizers for healthy soils." },
 ];
 
 // LEGACY placeholder brands — some sample products still reference these slugs.

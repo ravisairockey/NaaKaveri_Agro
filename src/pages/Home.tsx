@@ -21,6 +21,8 @@ const trust = [
 
 export default function Home() {
   const featured = products.filter((p) => p.featured);
+  // Brands with logos render first — adding a logo PNG auto-promotes the tile.
+  const sortedBrands = [...brands].sort((a, b) => Number(Boolean(b.logo)) - Number(Boolean(a.logo)));
   const { t, pick } = useLang();
 
   return (
@@ -186,13 +188,13 @@ export default function Home() {
                 The brands farmers trust, under one roof
               </h2>
               <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-charcoal/60">
-                Genuine, sealed stock from 15 leading agri-input companies — sourced only through
+                Genuine, sealed stock from 22 leading agri-input companies — sourced only through
                 authorised distributors.
               </p>
             </div>
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
-            {brands.map((b, i) => (
+            {sortedBrands.map((b, i) => (
               <Reveal key={b.slug} delay={(i % 5) * 0.05}>
                 <Link
                   to={`/brands/${b.slug}`}

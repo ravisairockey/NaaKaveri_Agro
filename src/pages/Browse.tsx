@@ -182,6 +182,8 @@ export function ProblemDetailPage() {
 // ────────────────────────── BRANDS ─────────────────────────
 
 export function BrandsPage() {
+  // Brands with logos render first — adding a logo PNG auto-promotes the tile.
+  const sortedBrands = [...brands].sort((a, b) => Number(Boolean(b.logo)) - Number(Boolean(a.logo)));
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14">
       <Reveal>
@@ -195,7 +197,7 @@ export function BrandsPage() {
         </p>
       </Reveal>
       <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {brands.map((b, i) => (
+        {sortedBrands.map((b, i) => (
           <Reveal key={b.slug} delay={(i % 4) * 0.05}>
             <Link
               to={`/brands/${b.slug}`}
